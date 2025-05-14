@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+/* Resetting margin and padding globally */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Basic Body Styling */
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/*----------------- Navbar Styling -----------------*/
+nav {
+    width: 100%;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Navbar Container */
+.nav-container {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+/* Navbar Links */
+.links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Underline effect on hover */
+.links a::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: red;
+    transition: 0.3s ease;
+}
+
+.links a:hover::before {
+    width: 100%;
+}
+
+.links a:hover {
+    color: red;
+}
+
+/* Hamburger Icon */
+.humburg {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/*----------------- Dropdown Menu -----------------*/
+.dropdown {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(6px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 0 20px #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown .links {
+    flex-direction: column;
+    width: 100%;
+}
+
+.dropdown .links a {
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown .links a:hover {
+    background-color: red;
+}
+
+/* Close Button for Dropdown */
+.cancel {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/*----------------- Responsive Styles -----------------*/
+@media (max-width: 768px) {
+    .nav-container .links {
+        display: none;
+    }
+
+    .humburg {
+        display: block;
+        position: absolute;
+        right: 30px;
+    }
+
+    .dropdown {
+        display: flex;
+    }
+
+    .dropdown .links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown .links a {
+        padding: 15px 0;
+        text-align: center;
+    }
+}
+
+/*-------------------------- Section --------------------------*/
+/* Section */
+section {
+    width: 100%;
+    height: 90vh;
+}
+
+/* Main Container */
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;  
+}
+
+/* Image inside Main Container */
+.main-container .image {
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px red;
+    margin-left: 20px; 
+    margin-right: 20px; 
+}
+
+.main-container .image img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Hover Animation for Image */
+.main-container .image:hover {
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+/* Keyframes Animation */
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Content inside Main Container */
+.main-container .content {
+    color: white;
+    width: 40%;
+    min-height: 100px;
+    margin-left: 20px; 
+    margin-right: 20px; 
+}
+
+.content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.content h1 span {
+    color: red;
+    text-shadow: 0 0 10px red;
+    
+}
+
+.content .typewriter {
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    font-weight: 600;
+}
+
+.content .typewriter-text {
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+.content p {
+    font-size: clamp(0.6rem, 0.2rem + 2vw, 1rem);
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    width: 3rem;
+    height: 3rem;
+    background-color: red;
+    border: 0.2rem solid red;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    background-color: white;
+    color: red;
+    box-shadow: 0 0 10px red;
+}
+
+/* Button inside Content */
+.content button {
+    width: 60%;
+    height: 4rem;
+    margin: 40px 0;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+
+.content button:hover {
+    transform: scale(1.05);
+    color: red;
+    background-color: transparent;
+    border: 2px solid red;
+    box-shadow: 0 0 40px red;
+}
+
+
+/* ----------------- ABOUT SECTION ----------------- */
+#about {
+  padding: 60px 20px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-content {
+  flex: 1 1 500px;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-content h2 span {
+  color: red;
+}
+
+.about-content p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: white;
+}
+
+.about-info ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.about-info li {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: white;
+}
+
+.about-info strong {
+  color: red;
+}
+
+.about-btn button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.about-btn button:hover {
+  background-color: white;
+  color: black;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: 3px solid red;
+  box-shadow: 0 0 20px red;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 30px;
+  }
+
+  .about-image img {
+    max-width: 250px;
+  }
+
+  .about-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .about-btn button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .about-image img {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+    padding: 40px 15px;
+  }
+
+  .about-container {
+    gap: 20px;
+  }
+
+  .about-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-btn button {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+
+  .about-image img {
+    max-width: 200px;
+  }
+}
+/*-----------------------------------------------------------------------------------------------About section end------------------------------------------------------*/ 
+/* ----------------- SKILLS BASE ----------------- */
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-color: black;
+  text-align: center;
+}
+
+/* ----------------- SKILLS SECTION ----------------- */
+.skills {
+  color: white;
+
+}
+.skills .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.skills h2 span {
+  color: red;
+  text-shadow: 0 0 10px red;
+}
+
+.skills .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+}
+
+/* Skill Card */
+.skill-card {
+  background-color: #1a1a1a;
+  border: 2px solid red;
+  border-radius: 15px;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  flex: 1 1 250px; 
+  min-width: 260px; 
+  margin-bottom: 30px; 
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  color: red;
+  margin-bottom: 15px;
+}
+
+.skill-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.skill-card p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 1024px) {
+  /* For medium screens like tablets or small desktops */
+  .skills .row {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .skill-card {
+    width: 90%; 
+    margin-bottom: 20px; 
+  }
+}
+
+@media (max-width: 768px) {
+  /* For small screens like phones */
+  .skills h2 {
+    font-size: 2rem;
+  }
+
+  .skills .row {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .skill-card {
+    width: 90%; 
+    margin-bottom: 20px; 
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+
+  .skill-card h4 {
+    font-size: 1.3rem;
+  }
+
+  .skill-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/*---------------------------------------------------------------Project sectiom start-------------------------------*/
+/* ----------------- PROJECTS SECTION ----------------- */
+.projects {
+  padding: 60px 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.projects .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.projects .section-title span {
+  color: red;
+  text-shadow: 0 0 10px red;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1250px;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  border: 2px solid red;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-position: center;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 3px solid #333;
+  display: block;
+}
+
+.project-card h4 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.project-card .btn {
+  display: inline-block;
+  width: 80%;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.project-card .btn:hover {
+  background-color: darkred;
+}
+
+/* --------------- RESPONSIVE DESIGN --------------- */
+@media (max-width: 992px) {
+  .projects-grid {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 85%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .project-card img {
+    height: 160px;
+  }
+
+  .project-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+  }
+}
+
+
+  /*---------------------------------------------------------contact section start--------------------------------*/
+/* Contact Section */
+.contact {
+  padding: 60px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  flex-grow: 1; 
+  margin-bottom: 50px; 
+}
+
+.contact .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.contact .section-title span {
+  color: red;
+  text-shadow: 0 0 10px red;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 50px; 
+}
+
+/* Contact Form */
+.contact-form {
+  background-color: #333333ac;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+  margin-bottom: 20px; 
+  overflow: hidden; 
+  max-height: 600px; 
+  height: auto; 
+}
+
+.contact-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: #111;
+  border: 1px solid red;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  resize: none; 
+}
+
+.contact-form .btn {
+  background-color: red;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: darkred;
+}
+
+/* Contact Info */
+.contact-info {
+  text-align: left;
+  max-width: 300px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: red;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: red;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omkar-PORTFOLIO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+  integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--------------------------------------------------------------------------Nav Part--------------------------------------------------------------------------------------------->
+<nav>
+  <div class="nav-container">
+    <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+      Hey <span> Madhuri Singh</span>
+    </div>
+
+    <div class="links" id="navLinks">
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="home.html">Home</a></div>
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="about.html">About</a></div>
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="project.html">Project</a></div>
+      <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact Us</a></div>
+    </div>
+
+    <i class="fa-solid fa-bars humburg" onclick="toggleDropdown()"></i>
+  </div>
+
+  
+  <div class="dropdown">
+    <div class="links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="project.html">Project</a>
+      <a href="contact.html">Contact Us</a>
+      <i class="fa-solid fa-xmark cancel" onclick="toggleDropdown()"></i>
+    </div>
+  </div>
+</nav>
+
+
+<!--------------------------------------------------------------------------------------------------About section start------------------------------------------------------------------------------------------------------------------------------->
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact <span>Me</span></h2>
+    <div class="contact-wrapper">
+      
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> madhurisingh23100@gmail.com</p>
+        <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +91 7248900691</p>
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Maharashtra, India</p>
+
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:yourname@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!------------------------------------------------------------------------------------------------------About section End------------------------------------------------------------------------------------------------------------------------------->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+    
+    function toggleDropdown() {
+    const dropdown = document.querySelector(".dropdown");
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+  }
+   
+    
+    //AOS.init();
+    AOS.init({
+  duration: 1000, // animation duration in ms
+  delay: 200,     // global delay
+  once: true      // animation runs only once
+});
+
+  </script>
+
+</body>
+</html>
+
